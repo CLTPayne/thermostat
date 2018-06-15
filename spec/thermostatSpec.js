@@ -53,7 +53,7 @@ describe('Thermostat', function() {
 
   describe('Powersaving mode:', function() {
     it('Can not be increased above 25 degress if powers saving mode is on', function () {
-      for(var i = 0; i <= 10; i++) {
+      for(var i = 0; i <= 9; i++) {
         thermostat.up();
       }
       expect(thermostat.getCurrentTemperature()).toEqual(25);
@@ -61,10 +61,18 @@ describe('Thermostat', function() {
 
     it('Can not be increased above 32 degrees when power saving mode is off', function () {
       thermostat.turnPowerSavingModeOff();
-      for(var i = 0; i <= 15; i++) {
+      for(var i = 0; i <= 14; i++) {
         thermostat.up();
       }
       expect(thermostat.getCurrentTemperature()).toEqual(32);
+    });
+
+    it('Can reset the temperature to 20', function() {
+      for(var i=0; i <= 4; i++) {
+        thermostat.up();
+      }
+      thermostat.resetTemperature();
+      expect(thermostat.getCurrentTemperature()).toEqual(20);
     });
 
   });

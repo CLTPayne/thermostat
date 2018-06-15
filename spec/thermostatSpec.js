@@ -106,7 +106,6 @@ describe('Thermostat', function() {
       });
     });
 
-
   });
 
 });

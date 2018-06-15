@@ -59,9 +59,9 @@ Thermostat.prototype.resetTemperature = function() {
 };
 
 Thermostat.prototype.energyUsage = function() {
-  if (this.temperature < this.LOW_USAGE_THRESHOLD) {
+  if (this.getCurrentTemperature() < this.LOW_USAGE_THRESHOLD) {
     return 'Low Usage';
-  } else if (this.temperature > this.HIGH_USAGE_THRESHOLD) {
+  } else if (this.getCurrentTemperature() > this.HIGH_USAGE_THRESHOLD) {
     return 'High Usage';
   } else {
     return 'Medium Usage';

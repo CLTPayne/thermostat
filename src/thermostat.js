@@ -38,8 +38,9 @@ Thermostat.prototype.isMaximumTemperature = function() {
   if (this.isPowerSavingModeOn() === true) {
     return this.temperature === this.POWER_SAVING_MAX_TEMP;
   }
-  else
+  else {
   return this.temperature === this.NON_POWER_SAVING_MAX_TEMP;
+  }
 };
 
 Thermostat.prototype.isPowerSavingModeOn = function() {

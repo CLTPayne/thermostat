@@ -1,6 +1,9 @@
 $(document).ready( function() {
   var thermostat = new Thermostat();
   updateTemperature();
+  $.get('http://api.openweathermap.org/data/2.5/weather?id=2643743&appid=227195fdd3e0a279d6b3f593dabec5fe&units=metric', function(data) {
+    $('#current-temp').text(data.main.temp);
+  });
 
   $('#increase-temp').click( function(event) {
     thermostat.up();
